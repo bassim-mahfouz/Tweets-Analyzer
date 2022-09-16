@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+Tweets Page
+{% endblock %}
+{% block content %}
+
+<div class="" style="margin-top:20px; margin-left:20px">
+   <div class="">
+       <h2>Tweets</h2>
+       <br>
+       <br>
+      <table class="table table-hover table-dark">
+         <thead>
+            <tr>
+               <!-- Your Columns HERE -->
+               <th scope="col">User</th>
+               <th scope="col">rawContent</th>
+               <th scope="col">hashtags</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- Your rows inside the table HERE: -->
+            {% for index in tweets.index %}
+            <tr>
+               
+               <td>{{ tweets["user"][index]["username"] }}</td>
+               <td>{{ tweets["rawContent"][index] }}</td>
+               <td>{{ tweets["hashtags"][index] }}</td>
+
+            </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </div>
+</div>
+{% endblock %}
